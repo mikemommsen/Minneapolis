@@ -23,16 +23,18 @@ create table stops (
   wheelchair_boarding int,
   stop_url text
 );
+select addgeometrycolumn("stops", "geometry", 4326, "POINT", 2);
+select createspatialindex("stops","geometry");
 
 create table routes (
   route_id int primary key,
-  agency_id int,
+  agency_id text,
   route_short_name int,
   route_long_name text,
   route_desc text,
   route_type int,
   route_url text,
-  foriegn key agency_id references (agency.agency_id_
+  foreign key (agency_id) references agency (agency_id)
 );
 
 create table trips (
@@ -43,8 +45,11 @@ create table trips (
   block_id int,
   shape_id int,
   wheelchair_accessible int,
-  primary key(route_id, service_id, trip_id), \**\
-  foriegn key route_id references (routes.route_id)
+  primary key (route_id, service_id, trip_id),
+  foreign key (route_id) references routes(route_id),
+  foreign key (shape_id) references shapes(shape_id),
+  foreign key (trip_id) references trips(trip_id),
+  foreign key (service_id) references calender(service_id)
 );
 
 create table stop_times (
@@ -55,9 +60,9 @@ create table stop_times (
   stop_sequence,
   pickup_type,
   drop_off_type,
-  primary key(trip_id, stop_id), \*stop_sequence if also an option *\
-  foriegn key trip_id references (trips.trip_id),
-  foriegn key stop_id references (stops.stop_id)
+  primary key (trip_id, stop_id),
+  foreign key (trip_id) references trips(trip_id),
+  foreign key (stop_id) references stops(stop_id)
 );
 
 create table calendar (
@@ -69,15 +74,15 @@ create table calendar (
   friday int,
   saturday int,
   sunday int,
-  start_date int,
-  end_date int
+  start_date date,
+  end_date date
 );
 
 create table calendar_dates (
   service_id text,
-  date date,
+  exception_date date,
   exception_type int,
-  foreign key service_id references calender.service_id
+  foreign key (service_id) references calender(service_id)
 );
 
 create table shapes (
@@ -85,7 +90,9 @@ create table shapes (
   shape_pt_lat float,
   shape_pt_lon float,
   shape_pt_sequence int,
-  primary key(shape_id, shape_pt_sequence)
+  primary key (shape_id, shape_pt_sequence)
 );
+select addgeometrycolumn("shapes", "geometry", 4326, "POINT", "XY");
+select createspatialindex("shapes", "geometry");
 
 commit;

@@ -1,0 +1,29 @@
+Data source ideas
+
+GTFS: ftp://gisftp.metc.state.mn.us/google_transit.zip
+    about: data about transportation routes and schedules. we have a sql schema for this
+    
+Lidar: http://arcgis.dnr.state.mn.us/maps/mntopo and ftp://ftp.lmic.state.mn.us/pub/data/elevation/lidar/projects/metro/
+    about: detailed elevation data both as DEM, topolines, and building data
+
+census data: nhgis.org, ftp.census.gov
+    about: I already downloaded all of the geographic data and will be working on the tabular and historic stuff
+    
+imagery: earthexplorer.usgs.gov, there are more resources locally as well
+    about: i have downloaded the 2012 .3 meter resolution imagery. I'll slowly work on the older imagery
+    
+topomaps: store.usgs.gov
+    about: they have quite a few of the topographic maps including the new ones.
+        old ones are tiff so thats easy, but new ones are geopdf so we need to get an ogr driver
+
+borchert map library: https://www.lib.umn.edu/borchert/featured-minnesota-collections
+    about: great maps from the U of M. we can got and scan things there if that they dont have online as well
+
+david rumsey: http://www.davidrumsey.com
+   about: crazy dude that collects old maps and lets you download MrSid files for free. 
+       I need to get a MrSid reader for GDAL to work with these
+
+Hennepin County: http://www.hennepin.us/gisopendata
+    about: Lots of stuff here. I already got the parcel data.
+    
+Minneapolis: 

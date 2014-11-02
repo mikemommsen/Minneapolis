@@ -1,5 +1,8 @@
 Data source ideas
 
+OpenStreetMap: https://mapzen.com/metro-extracts/, http://overpass-api.de/api/map?bbox=-93.4518,44.8875,-93.1325,45.0534
+    about: we need to find the best source and determine how to convert from osms format into something mappable
+
 GTFS: ftp://gisftp.metc.state.mn.us/google_transit.zip
     about: data about transportation routes and schedules. we have a sql schema for this
     

@@ -5,7 +5,8 @@ GTFS: ftp://gisftp.metc.state.mn.us/google_transit.zip
     
 Lidar: http://arcgis.dnr.state.mn.us/maps/mntopo and ftp://ftp.lmic.state.mn.us/pub/data/elevation/lidar/projects/metro/
     about: detailed elevation data both as DEM, topolines, and building data
-
+    we need to get a plugin to read the .laz file
+    
 census data: nhgis.org, ftp.census.gov
     about: I already downloaded all of the geographic data and will be working on the tabular and historic stuff
     

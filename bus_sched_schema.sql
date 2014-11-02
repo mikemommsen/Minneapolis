@@ -1,3 +1,6 @@
+/* sql schema for GTFS
+Mike Mommsen
+I made this a couple years ago so we need to see if it matches current schema*/
 begin transaction;
 
 create table agency (

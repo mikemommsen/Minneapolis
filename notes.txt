@@ -26,4 +26,5 @@ david rumsey: http://www.davidrumsey.com
 Hennepin County: http://www.hennepin.us/gisopendata
     about: Lots of stuff here. I already got the parcel data.
     
-Minneapolis: 
+Minneapolis: http://www.minneapolismn.gov/maps/about_maps_gis-main
+    about: we should get most of this stuff, but I wonder what will change with thanksgiving
